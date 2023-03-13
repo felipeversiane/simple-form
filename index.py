@@ -26,11 +26,12 @@ def app(environ, start_response):
                 "message" : params.get('message', [''])[0]
             }
             forms_data.append(req)
-            data = b"Your feedback submitted successfully."
+            with open(os.path.join(root, "form/form-sucessfully.html"), "rb") as f:
+                data = f.read()
         if method == "GET":
             with open(os.path.join(root, "form/form.html"), "rb") as f:
                 data = f.read()
-    elif path != "/" and path!= "/feedback":
+    elif path != "/" and path != "/feedback":
          with open(os.path.join(root, "error/error404.html"), "rb") as f:
             data = f.read()
             
