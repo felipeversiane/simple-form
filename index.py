@@ -12,7 +12,8 @@ def app(environ, start_response):
 
 
     if path == "/":  
-        data=b"a HOME HTML HERE"
+        with open(os.path.join(root, "home/home.html"),"rb") as f:
+            data=f.read()
     if path == "/feedback":
         if method == "POST":
             input_obj = environ["wsgi.input"]
@@ -27,12 +28,14 @@ def app(environ, start_response):
             forms_data.append(req)
             data = b"Your feedback submitted successfully."
         if method == "GET":
-            data= b"a form HERE"
+            with open(os.path.join(root, "form/form.html"), "rb") as f:
+                data = f.read()
     elif path != "/" and path!= "/feedback":
-        data = b"a 404 ERROR PAGE HERE"
+         with open(os.path.join(root, "error/error404.html"), "rb") as f:
+            data = f.read()
             
     start_response("200 OK", [
-        ("Content-Type", "text/plain"),
+        ("Content-Type", "text/html"),
         ("Content-Length", str(len(data)))
     ])
     return iter([data])
