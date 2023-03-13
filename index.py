@@ -1,16 +1,18 @@
 import wsgiref.simple_server
 import urllib.parse
 import os
+
+root = os.path.dirname(os.path.abspath(__file__))
+
 def app(environ, start_response):
     path = environ["PATH_INFO"]
     method = environ["REQUEST_METHOD"]
     data=b""
     forms_data = []
-    if path == "/":
-        # data = b"Hello, Web!\n"
-        Root = os.path.dirname(os.path.abspath(__file__))    
-        f = open(Root + 'index.html')
-        data = f.read()
+
+
+    if path == "/":  
+        data=b"a HOME HTML HERE"
     if path == "/feedback":
         if method == "POST":
             input_obj = environ["wsgi.input"]
@@ -25,9 +27,9 @@ def app(environ, start_response):
             forms_data.append(req)
             data = b"Your feedback submitted successfully."
         if method == "GET":
-             data = b"A HTML SITE HERE"
-    else :
-        data = b" A ERROR 404 MESSAGE SITE HERE"
+            data= b"a form HERE"
+    elif path != "/" and path!= "/feedback":
+        data = b"a 404 ERROR PAGE HERE"
             
     start_response("200 OK", [
         ("Content-Type", "text/plain"),
