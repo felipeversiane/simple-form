@@ -4,14 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
     <title>MEU SITE</title>
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F2F2F2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+input[type="button"] {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type="button"]:hover {
+    background-color: #555555;
+}
+
+.btn-forms {
+    margin-top: 20px;
+}
+</style>
 <body>
     <div class="container">
         <h1>MEU SITE</h1>
-        <button > <a href="http:\\localhost:18000/feedback">Formulário</a> </button>
-
-    
+        <input type="button" value="Formulário" onclick="window.location.href='http://localhost:18000/feedback'">
+        <input type="button" class="btn-forms" value="Formulários" onclick="window.location.href='http://localhost:18000/forms'">
+    </div>
 </body>
 </html>
