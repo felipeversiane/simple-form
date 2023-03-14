@@ -29,7 +29,6 @@ def app(environ, start_response):
                 "message" : params.get('message', [''])[0]
             }
             forms_data.append(req)
-            data = b"Thank you for your feedback!"
         if method == "GET":
             with open(os.path.join(root, "form/form.html"), "rb") as f:
                 data = f.read()
