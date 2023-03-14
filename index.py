@@ -14,6 +14,9 @@ def app(environ, start_response):
     if path == "/":  
         with open(os.path.join(root, "home/home.html"),"rb") as f:
             data=f.read()
+    if path == "/formsucess":
+        with open(os.path.join(root, "form/form-sucessfully.html"), "rb") as f:
+                data = f.read()
     if path == "/feedback":
         if method == "POST":
             input_obj = environ["wsgi.input"]
@@ -26,12 +29,11 @@ def app(environ, start_response):
                 "message" : params.get('message', [''])[0]
             }
             forms_data.append(req)
-            with open(os.path.join(root, "form/form-sucessfully.html"), "rb") as f:
-                data = f.read()
+            data = b"Thank you for your feedback!"
         if method == "GET":
             with open(os.path.join(root, "form/form.html"), "rb") as f:
                 data = f.read()
-    elif path != "/" and path != "/feedback":
+    elif path != "/" and path != "/feedback" and path!= "/formsucess":
          with open(os.path.join(root, "error/error404.html"), "rb") as f:
             data = f.read()
             
