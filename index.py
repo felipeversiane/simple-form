@@ -33,7 +33,12 @@ def app(environ, start_response):
             data=f.read()
     if path == "/formsucess":
         with open(os.path.join(root, "form/form-sucessfully.html"), "rb") as f:
-            data = f.read()
+            name = ""
+            qs = urllib.parse.parse_qs(environ.get('QUERY_STRING', ''))
+            if "name" in qs:
+                name = qs["name"][0]
+            with open(os.path.join(root, "form/form-sucessfully.html"), "rb") as f:
+                data = f.read().replace(b"__NAME__", name.encode())
     if path == "/feedback":
         if method == "POST":
             input_obj = environ["wsgi.input"]
@@ -52,7 +57,7 @@ def app(environ, start_response):
             with open(os.path.join(root, "feedbacks.json"), "w") as f:
                 json.dump(feedbacks, f, indent=4)
             start_response("302 Found", [
-                ("Location", "/formsucess"),
+                ("Location", "/formsucess?name=" + req["name"]),
             ])
             return iter([])
         if method == "GET":

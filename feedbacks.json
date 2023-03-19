@@ -58,5 +58,10 @@
         "name": "Jose ",
         "email": "jose@hotmail.com",
         "feedback": "Site pika!!"
+    },
+    {
+        "name": "Joao",
+        "email": "joaosilva123@gmail.com",
+        "feedback": "Bateria massa"
     }
 ]
