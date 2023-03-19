@@ -81,20 +81,20 @@ input[type="button"]:nth-child(2):hover {
 }
 </style>
 <body>
-    <h2>Feedback form</h2>
-	<form action="http://localhost:18000/formsucess" method="post">
-		<label for="name">Nome:</label>
-		<input type="text" id="name" name="name" required><br><br>
-		
-		<label for="email">E-mail:</label>
-		<input type="email" id="email" name="email" required><br><br>
-		
-		<label for="feedback">Feedback:</label><br>
-		<textarea id="feedback" name="feedback" rows="5" cols="30" required></textarea><br><br>
-		
-		<input type="submit" value="Enviar">
-		<input type="button" value="Voltar" onclick="window.location.href='http://localhost:18000/'">
-	</form>
+    <h2>Formulário de Feedback</h2>
+    <form action="/feedback" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="5" cols="30" required></textarea><br><br>
+        
+        <input type="submit" value="Enviar">
+        <input type="button" value="Voltar" onclick="window.location.href='http://localhost:18000/'">
+    </form>
 
 </body>
 </html>

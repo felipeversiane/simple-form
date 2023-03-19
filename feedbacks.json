@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Pedro",
+        "email": "pedro@uol.com.br",
+        "feedback": "\u00d3timo servi\u00e7o!"
+    },
+    {
+        "name": "J\u00falia",
+        "email": "julia@outlook.com",
+        "feedback": "Precisa melhorar o atendimento."
+    },
+    {
+        "name": "Lucas",
+        "email": "lucas@gmail.com",
+        "feedback": "Produtos de qualidade."
+    },
+    {
+        "name": "Ana",
+        "email": "ana@yahoo.com",
+        "feedback": "Pre\u00e7os muito altos."
+    },
+    {
+        "name": "Beatriz",
+        "email": "beatriz@hotmail.com",
+        "feedback": "Entrega r\u00e1pida e eficiente."
+    },
+    {
+        "name": "Diego",
+        "email": "diego@gmail.com",
+        "feedback": "\u00d3timo servi\u00e7o!"
+    },
+    {
+        "name": "Maria",
+        "email": "maria@yahoo.com",
+        "feedback": "Entrega r\u00e1pida e eficiente."
+    },
+    {
+        "name": "Jo\u00e3o",
+        "email": "joao@outlook.com",
+        "feedback": "Pre\u00e7os muito altos."
+    },
+    {
+        "name": "Gustavo",
+        "email": "gustavo@uol.com.br",
+        "feedback": "Produtos de qualidade."
+    },
+    {
+        "name": "Carla",
+        "email": "carla@hotmail.com",
+        "feedback": "Pre\u00e7os muito altos."
+    },
+    {
+        "name": "Felipe",
+        "email": "felipeversiane09@gmail.com",
+        "feedback": "Muito bom !!"
+    },
+    {
+        "name": "Jose ",
+        "email": "jose@hotmail.com",
+        "feedback": "Site pika!!"
+    }
+]
