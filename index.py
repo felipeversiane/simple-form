@@ -18,7 +18,6 @@ def app(environ, start_response):
     path = environ["PATH_INFO"]
     method = environ["REQUEST_METHOD"]
     data = b""
-    forms_data = []
 
     if path == "/forms":
         feedbacks = []
@@ -42,15 +41,14 @@ def app(environ, start_response):
             input_length = int(environ["CONTENT_LENGTH"])
             body = input_obj.read(input_length).decode('utf-8')
             params = urllib.parse.parse_qs(body, keep_blank_values=True)
-            email = params.get('email', [''])[0]
-            if "@" not in email:
-                start_response("400 Bad Request", [("Content-Type", "text/html; charset=utf-8")])
-                return iter([b"Failure"])
             req = { 
                 "name" : params.get('name', [''])[0],
-                "email" : email,
+                "email" : params.get('email', [''])[0],
                 "feedback" : params.get('feedback', [''])[0]
             }
+            if "@" not in req['email']:
+                start_response("400 Bad Request", [("Content-Type", "text/html; charset=utf-8")])
+                return iter([b"Failure"]) 
             feedbacks = []
             with open(os.path.join(root, "feedbacks.json"), "r") as f:
                 feedbacks = json.load(f)

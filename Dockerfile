@@ -8,5 +8,9 @@ RUN apk add --update \
 ADD requirements.txt /tmp
 RUN pip install -r /tmp/requirements.txt
 
+WORKDIR /app
+
+COPY . .
+
 EXPOSE 8000
 CMD python index.py 
