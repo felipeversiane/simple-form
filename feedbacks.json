@@ -63,5 +63,30 @@
         "name": "Joao",
         "email": "joaosilva123@gmail.com",
         "feedback": "Bateria massa"
+    },
+    {
+        "name": "Felipe Versiani",
+        "email": "felipevers1@gmail.com",
+        "feedback": "Adorei tudo ! amei de verdade ..."
+    },
+    {
+        "name": "Felipe Fernandes",
+        "email": "felipegmail.com@das",
+        "feedback": "sabe , queria "
+    },
+    {
+        "name": "Livia ",
+        "email": "livia@gmail",
+        "feedback": "oi "
+    },
+    {
+        "name": "Alessandro",
+        "email": "alessandro@alessandro.com",
+        "feedback": "Odiei o site , nota 0 . "
+    },
+    {
+        "name": "Caio Cesar ",
+        "email": "caiocesar@gmail.com",
+        "feedback": "Achei top parabens irmao ! "
     }
 ]
