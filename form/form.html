@@ -79,18 +79,24 @@ input[type="button"]:nth-child(2) {
 input[type="button"]:nth-child(2):hover {
     background-color: #777777;
 }
+#warning {
+	color : red;
+	font-family: sans-serif;
+}
 </style>
 <body>
     <h2>Formulário de Feedback</h2>
     <form action="/feedback" method="post">
         <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name" required value="__name__"><br><br>
         
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
+        <label for="email">E-mail:</label> 
+        <input type="text" id="email" name="email" required value="__email__"><br><br>
+        <p id="warning">__error__</p>
+		
         <label for="feedback">Feedback:</label><br>
-        <textarea id="feedback" name="feedback" rows="5" cols="30" required></textarea><br><br>
+        <textarea id="feedback" name="feedback" rows="5" cols="30" required >__feedback__</textarea><br><br>
+		
         
         <input type="submit" value="Enviar">
         <input type="button" value="Voltar" onclick="window.location.href='http://localhost:18000/'">

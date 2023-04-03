@@ -1,2 +1,4 @@
 gevent
 Jinja2==3.1.2
+psycopg2-binary
+orator
